@@ -35,6 +35,7 @@ def load_data(league):
 df = load_data(selected_league)
 
 
+
 # Sidebar - Columns selection
 sorted_unique_column = df.columns.to_list()
 
