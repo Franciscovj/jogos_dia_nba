@@ -6,7 +6,7 @@ from datetime import date
 
 
 st.title("Web App fvj Stats")
-selected_date = st.sidebar.date_input('Select a date', date.today())
+
 st.sidebar.subheader("Selecione as colunas")
 
 st.sidebar.header("Leagues")
