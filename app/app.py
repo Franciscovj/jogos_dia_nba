@@ -17,3 +17,15 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
                                                  'HUNGARY - OTP BANK LIGA', 'NETHERLANDS - EERSTE DIVISIE', 'FRANCE - LIGUE 1',
                                                  'NORTHERN IRELAND - NIFL PREMIERSHIP', 'ENGLAND - PREMIER LEAGUE', 'PORTUGAL - LIGA PORTUGAL', 'PORTUGAL - LIGA PORTUGAL 2', 'AZERBAIJAN - PREMIER LEAGUE', 'CROATIA - PRVA NL', 'TURKEY - 1. LIG', 'TURKEY - SUPER LIG', 'GERMANY - BUNDESLIGA', 'WALES - CYMRU PREMIER', 'SPAIN - LALIGA',
                                                  'SPAIN - LALIGA2', 'CYPRUS - FIRST DIVISION', 'MALTA - PREMIER LEAGUE', 'ITALY - SERIE B', "ISRAEL - LIGAT HA'AL", 'GREECE - SUPER LEAGUE', 'ITALY - SERIE A', 'BAHRAIN - PREMIER LEAGUE', 'EGYPT - PREMIER LEAGUE', 'AUSTRALIA - A-LEAGUE', 'INDIA - ISL'])
+
+
+def load_data(league):
+  
+  
+
+  data = pd.read_csv('https://github.com/Franciscovj/jogos_dia_nba/blob/main/dash_23.csv?raw=true')
+  data = data[data['League'] == selected_league]
+    
+  return data
+
+
