@@ -22,10 +22,13 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
 def load_data(league):
   
   
-
-  data = pd.read_csv('https://github.com/Franciscovj/jogos_dia_nba/blob/main/dash_23.csv?raw=true')
+  url = "'https://github.com/Franciscovj/jogos_dia_nba/blob/main/dash_23.csv?raw=true"
+  data = pd.read_csv(url)
   data = data[data['League'] == selected_league]
     
   return data
 
+df = load_data(selected_league)
 
+st.subheader("Dataframe: "+selected_league)
+st.dataframe(df)
