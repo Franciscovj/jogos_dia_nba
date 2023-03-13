@@ -49,9 +49,7 @@ selected_column = st.sidebar.multiselect('Columns', sorted_unique_column, [
  'CV_GS_A', 'Media_p_H', 'Media_p_A', 'DP_p_H', 'DP_p_A', 'CG_H_XP', 'CG_A_XP', 'DP_CG_H_XP', 'DP_CG_A_XP', 'VG_H_XP', 'VG_A_XP', 'DP_VG_H_XP', 'DP_VG_A_XP', 'GM_H_XP', 'GM_A_XP', 'CV_GM_H_XP',
  'CV_GM_A_XP', 'GS_H_XP', 'GS_A_XP', 'CV_GS_H_XP', 'CV_GS_A_XP', 'gols_sofridos_home', 'gols_sofridos_away', 
  'Over05_FT', 'Over05_HT', 'Under05_HT', 'Under15_HT', 'Over25_FT', 'Under25_FT', 'Under35_FT', 'Home_Win', 
- 'Away_Win', 'Away_X2', 'home_X1', 'Draw', 'BTTS', 'BTTS_NO', 'Porc_Over05HT_Home',
- 'Porc_Over05HT_Away', 'Porc_Under15HT_Home', 'Porc_Under15HT_Away', 'Porc_Over05FT_Home', 'Porc_Over05FT_Away',
- 'Porc_draw_Home', 'Porc_draw_Away', 'Porc_Over25FT_Home', 'Porc_Over25FT_Away', 'Porc_BTTS_Home', 'Porc_BTTS_Away'])
+ 'Away_Win', 'Away_X2', 'home_X1', 'Draw', 'BTTS', 'BTTS_NO'])
 
 # Sidebar - Team selection
 sorted_unique_team = sorted(df.Home.unique())
