@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import datetime
+from datetime import date
 
 
 st.title("Web App fvj Stats")
+selected_date = st.sidebar.date_input('Select a date', date.today())
 
 st.sidebar.header("Leagues")
 selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL', 'PARAGUAY - PRIMERA DIVISION', 'COLOMBIA - PRIMERA A', 'VENEZUELA - PRIMERA DIVISION', 'ECUADOR - LIGA PRO', 'IRELAND - PREMIER DIVISION', 'CHILE - PRIMERA DIVISION', 'PERU - LIGA 1', 'URUGUAY - PRIMERA DIVISION', 'JAPAN - J1 LEAGUE', 
