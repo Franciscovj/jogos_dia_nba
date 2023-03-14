@@ -7,12 +7,6 @@ from datetime import date
 
 st.title("Web App fvj Stats")
 
-# Define a cor de fundo da página
-st.set_page_config(page_title="My Streamlit App", page_icon=":guardsman:", layout="wide", 
-                   initial_sidebar_state="expanded", background_color="#F5F5F5", 
-                   menu_items={"Get Help": "https://www.streamlit.io/docs/", 
-                               "Report a bug": "https://github.com/streamlit/streamlit/issues/new/choose"})
-
 st.sidebar.header('Jogos do Dia')
 
 dia = st.date_input(
