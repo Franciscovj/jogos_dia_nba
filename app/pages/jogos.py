@@ -20,8 +20,9 @@ def load_data_jogos():
 
 df_jogos = load_data_jogos()
 # Define o valor mínimo e máximo do controle deslizante com base na coluna "FT_Odd_H" do DataFrame
-valor_minimo = df_jogos['FT_Odd_H'].min()
-valor_maximo = df_jogos['FT_Odd_H'].max()
+valor_minimo = float(df_jogos['FT_Odd_H'].min())
+valor_maximo = float(df_jogos['FT_Odd_H'].max())
+
 
 # Cria um controle deslizante com base no valor mínimo e máximo definidos acima
 valor_selecionado = st.slider('Selecione os pontos', valor_minimo, valor_maximo)
