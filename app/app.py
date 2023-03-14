@@ -68,7 +68,9 @@ st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
 pages = {
-    'Mapa': mapa
+    'Mapa': mapa,
+   'liga': load_data(league)
+
 
 }
 page = st.sidebar.selectbox('Escolha uma página', pages.keys())
