@@ -30,12 +30,16 @@ valor_min_away = float(df_jogos['FT_Odd_A'].min())
 valor_max_away = float(df_jogos['FT_Odd_A'].max())
 
 # Cria controles deslizantes para definir os valores mínimo e máximo
-valor_min_home = st.slider('valor_min_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_home)
-valor_max_home = st.slider('valor_max_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_home)
-valor_min_draw = st.slider('valor_min_draw', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_draw)
-valor_max_draw = st.slider('valor_max_draw', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_draw)
-valor_min_away = st.slider('valor_min_away', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_away)
-valor_max_away = st.slider('valor_max_away', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_away)
+#valor_min_home = st.slider('valor_min_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_home)
+#valor_max_home = st.slider('valor_max_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_home)
+#valor_min_draw = st.slider('valor_min_draw', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_draw)
+#valor_max_draw = st.slider('valor_max_draw', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_draw)
+#valor_min_away = st.slider('valor_min_away', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_away)
+#valor_max_away = st.slider('valor_max_away', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_away)
+valor_min_home, valor_max_home = st.slider('Casa', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), (valor_min_home, valor_max_home), step=0.01)
+valor_min_draw, valor_max_draw = st.slider('Empate', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_D'].max()), (valor_min_draw, valor_max_draw), step=0.01)
+valor_min_away, valor_max_away = st.slider('Fora', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_A'].max()), (valor_min_away, valor_max_away), step=0.01)
+
 
 # Filtra o DataFrame com base nos valores mínimos e máximos selecionados nos controles deslizantes
 #df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home")
