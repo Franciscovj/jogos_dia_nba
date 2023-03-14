@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import uuid
 import datetime
 from datetime import date
 
@@ -23,26 +22,6 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
                                                  'NORTHERN IRELAND - NIFL PREMIERSHIP', 'ENGLAND - PREMIER LEAGUE', 'PORTUGAL - LIGA PORTUGAL', 'PORTUGAL - LIGA PORTUGAL 2', 'AZERBAIJAN - PREMIER LEAGUE', 'CROATIA - PRVA NL', 'TURKEY - 1. LIG', 'TURKEY - SUPER LIG', 'GERMANY - BUNDESLIGA', 'WALES - CYMRU PREMIER', 'SPAIN - LALIGA',
                                                  'SPAIN - LALIGA2', 'CYPRUS - FIRST DIVISION', 'MALTA - PREMIER LEAGUE', 'ITALY - SERIE B', "ISRAEL - LIGAT HA'AL", 'GREECE - SUPER LEAGUE', 'ITALY - SERIE A', 'BAHRAIN - PREMIER LEAGUE', 'EGYPT - PREMIER LEAGUE', 'AUSTRALIA - A-LEAGUE', 'INDIA - ISL'])
 
-
-
-def load_data_jogos():
-  st.title("Jogos do Dia")
-
-  # Gerando um key único com uuid
-  key = str(uuid.uuid4())
-
-  dia = st.date_input(
-      "Data de Análise",
-      date.today(),
-      key=key)
-  
-  data_jogos = pd.read_csv("https://github.com/futpythontrader/YouTube/blob/main/Jogos_do_Dia_FlashScore/"+str(dia)+"_Jogos_do_Dia_FlashScore.csv?raw=true")
-    
-  return data_jogos
-
-df_jogos = load_data_jogos()
-
-st.dataframe(df_jogos)
 
 
 def load_data(league):
@@ -69,14 +48,4 @@ df_filtered = df[(df.Home.isin(selected_team))]
 st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
-pages = {
-    'jogos do dia': load_data_jogos,
-     'ligas': load_data
-
-
-}
-page = st.sidebar.selectbox('Escolha uma página', pages.keys())
-
-if page:
-    pages[page]()
 
