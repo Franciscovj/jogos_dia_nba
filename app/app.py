@@ -48,14 +48,6 @@ df = load_data(selected_league)
 
 
 
-# Sidebar - Columns selection
-sorted_unique_column = df.columns.to_list()
-
-selected_column = st.sidebar.multiselect('Columns', sorted_unique_column, [
- 'Liga', 'Date', 'Home', 'Away', 'Goals_H_HT', 'Goals_A_HT', 'FT_Goals_H', 'FT_Goals_A', 'FT_Odds_H', 'FT_Odds_D', 'FT_Odds_A', 'HT_Odds_H', 'HT_Odds_D', 'HT_Odds_A', 'FT_Odds_DC_X2', 
- 'HT_Odds_Under05', 'HT_Odds_Under15', 'FT_Odds_Over25', 'FT_Odds_under25', 'FT_Odds_Under35', 'FT_Odds_BTTS_Yes'
-])
-
 # Sidebar - Team selection
 sorted_unique_team = sorted(df.Home.unique())
 selected_team = st.sidebar.multiselect('Teams', sorted_unique_team, sorted_unique_team)
