@@ -5,15 +5,19 @@ import numpy as np
 import datetime
 from datetime import date
 
-theme = {
-    "primaryColor": "#FF6347",
-    "backgroundColor": "#F5F5DC",
-    "secondaryBackgroundColor": "#EEE8AA",
-    "textColor": "#696969",
-    "font": "sans serif"
-}
+page_bg_color = "#f5f5f5"
+page_icon = ":smiley:"
+layout = "wide"
+initial_sidebar_state = "auto"
 
-st.set_theme_info(theme)
+# Configura o tema do aplicativo
+st.set_page_config(
+    page_title="My Streamlit App",
+    page_icon=page_icon,
+    layout=layout,
+    initial_sidebar_state=initial_sidebar_state,
+    page_bg_color=page_bg_color,
+)
 
 st.title("Web App fvj Stats")
 
