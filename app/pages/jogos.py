@@ -5,13 +5,15 @@ import numpy as np
 import datetime
 from datetime import date
 
-st.set_theme_info(
-    primaryColor='#7792E3',
-    backgroundColor='#273346',
-    secondaryBackgroundColor='#B9F1C0',
-    textColor='#FFFFFF',
-    font='sans serif'
-)
+theme = {
+    "primaryColor": "#FF6347",
+    "backgroundColor": "#F5F5DC",
+    "secondaryBackgroundColor": "#EEE8AA",
+    "textColor": "#696969",
+    "font": "sans serif"
+}
+
+st.set_theme_info(theme)
 
 st.title("Web App fvj Stats")
 
