@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     # Define a cor de fundo da página
-    page_bg_color="#00FF00",
+    page_bg_color="#ff8080",
     # Define a cor da barra lateral
     sidebar_bg_color="#0000FF",
 )
