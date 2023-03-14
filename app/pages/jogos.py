@@ -29,8 +29,10 @@ valor_maximo = float(df_jogos['FT_Odd_H'].max())
 # Cria controles deslizantes para definir os valores mínimo e máximo
 #valor_minimo = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo)
 #valor_maximo = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo)
-valor_minimo = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo, format="%f", step=0.01)
-valor_maximo = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo, format="%f", step=0.01)
+#valor_minimo = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo, format="%f", step=0.01)
+#valor_maximo = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo, format="%f", step=0.01)
+valor_minimo = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo, format="%f", step=0.01, width=200)
+valor_maximo = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo, format="%f", step=0.01, width=200)
 
 
 
