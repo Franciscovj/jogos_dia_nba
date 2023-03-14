@@ -28,6 +28,8 @@ valor_min_draw = float(df_jogos['FT_Odd_D'].min())
 valor_max_draw = float(df_jogos['FT_Odd_D'].max())
 valor_min_away = float(df_jogos['FT_Odd_A'].min())
 valor_max_away = float(df_jogos['FT_Odd_A'].max())
+valor_min_over = float(df_jogos['FT_Odd_Over25'].min())
+valor_max_over = float(df_jogos['FT_Odd_Over25'].max())
 
 # Cria controles deslizantes para definir os valores mínimo e máximo
 #valor_min_home = st.slider('valor_min_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_home)
@@ -39,11 +41,11 @@ valor_max_away = float(df_jogos['FT_Odd_A'].max())
 valor_min_home, valor_max_home = st.slider('Casa', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), (valor_min_home, valor_max_home), step=0.01)
 valor_min_draw, valor_max_draw = st.slider('Empate', float(df_jogos['FT_Odd_D'].min()), float(df_jogos['FT_Odd_D'].max()), (valor_min_draw, valor_max_draw), step=0.01)
 valor_min_away, valor_max_away = st.slider('Fora', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_A'].max()), (valor_min_away, valor_max_away), step=0.01)
-
+valor_min_over, valor_max_over = st.slider('Over 2,5', float(df_jogos['FT_Odd_Over25'].min()), float(df_jogos['FT_Odd_Over25'].max()), (valor_min_over, valor_max_over), step=0.01)
 
 # Filtra o DataFrame com base nos valores mínimos e máximos selecionados nos controles deslizantes
 #df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home")
-df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home and @valor_min_draw<= FT_Odd_D <= @valor_max_draw and @valor_min_away<= FT_Odd_A <= @valor_max_away")
+df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home and @valor_min_draw<= FT_Odd_D <= @valor_max_draw and @valor_min_away<= FT_Odd_A <= @valor_max_away and  @valor_min_over<= FT_Odd_Over25<= @valor_max_over")
 st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
 st.subheader("Dataframe Filtrado")
