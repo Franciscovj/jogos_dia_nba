@@ -38,9 +38,10 @@ valor_min_away = st.slider('valor_min_away', float(df_jogos['FT_Odd_A'].min()), 
 valor_max_away = st.slider('valor_max_away', float(df_jogos['FT_Odd_A'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_away)
 
 # Filtra o DataFrame com base nos valores mínimos e máximos selecionados nos controles deslizantes
-df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home")
-df_filtrado = df_jogos.query("@valor_min_draw<= FT_Odd_A <= @valor_max_draw")
-df_filtrado = df_jogos.query("@valor_min_away<= FT_Odd_H <= @valor_max_away")
+#df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home")
+#df_filtrado = df_jogos.query("@valor_min_draw<= FT_Odd_A <= @valor_max_draw")
+#df_filtrado = df_jogos.query("@valor_min_away<= FT_Odd_H <= @valor_max_away")
+df_filtrado = df_jogos.query("@valor_min_home<= FT_Odd_H <= @valor_max_home and @valor_min_draw<= FT_Odd_D <= @valor_max_draw and @valor_min_away<= FT_Odd_A <= @valor_max_away")
 st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
 st.subheader("Dataframe Filtrado")
