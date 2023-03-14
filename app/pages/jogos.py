@@ -4,6 +4,18 @@ import pandas as pd
 import numpy as np
 import datetime
 from datetime import date
+st.set_page_config(
+    page_title="My Streamlit App",
+    page_icon=":guardsman:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    # Define a cor de fundo da página
+    bg_color="#00FF00",
+    # Define a cor da barra lateral
+    sidebar_bg_color="#0000FF",
+)
+
+st.title("Minha aplicação personalizada com Streamlit")
 
 st.title("Web App fvj Stats")
 
