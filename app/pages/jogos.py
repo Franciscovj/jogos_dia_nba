@@ -26,8 +26,8 @@ valor_min_home = float(df_jogos['FT_Odd_H'].min())
 valor_max_home = float(df_jogos['FT_Odd_H'].max())
 
 # Cria controles deslizantes para definir os valores mínimo e máximo
-valor_min_home = st.slider('valor_min_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo)
-valor_max_home = st.slider('valor_max_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo)
+valor_min_home = st.slider('valor_min_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_min_home)
+valor_max_home = st.slider('valor_max_home', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_max_home)
 
 
 
