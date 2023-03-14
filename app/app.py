@@ -60,8 +60,7 @@ st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
 pages = {
-    'Mapa': mapa,
-   'liga': load_data(selected_league)
+    'Mapa': mapa
 
 
 }
