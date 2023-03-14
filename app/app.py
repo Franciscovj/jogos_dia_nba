@@ -69,7 +69,7 @@ st.dataframe(df_filtered)
 
 pages = {
     'Mapa': mapa,
-   'liga': load_data(league)
+   'liga': load_data(selected_league)
 
 
 }
