@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import uuid
 import datetime
 from datetime import date
 
@@ -27,9 +28,13 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
 def load_data_jogos():
   st.title("Jogos do Dia")
 
+  # Gerando um key único com uuid
+  key = str(uuid.uuid4())
+
   dia = st.date_input(
       "Data de Análise",
-      date.today())
+      date.today(),
+      key=key)
   
   data_jogos = pd.read_csv("https://github.com/futpythontrader/YouTube/blob/main/Jogos_do_Dia_FlashScore/"+str(dia)+"_Jogos_do_Dia_FlashScore.csv?raw=true")
     
@@ -38,6 +43,7 @@ def load_data_jogos():
 df_jogos = load_data_jogos()
 
 st.dataframe(df_jogos)
+
 
 def load_data(league):
   
