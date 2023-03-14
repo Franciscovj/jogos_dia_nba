@@ -64,7 +64,7 @@ st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
 pages = {
-    'jogos do dia': load_data_jogos()
+    'jogos do dia': load_data_jogos
 
 
 }
