@@ -5,7 +5,9 @@ import numpy as np
 import datetime
 from datetime import date
 
-st.title("Jogos do Dia")
+st.title("Web App fvj Stats")
+
+st.sidebar.header('Jogos do Dia')
 
 dia = st.date_input(
     "Data de Análise",
