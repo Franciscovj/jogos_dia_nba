@@ -22,18 +22,26 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
                                                  'NORTHERN IRELAND - NIFL PREMIERSHIP', 'ENGLAND - PREMIER LEAGUE', 'PORTUGAL - LIGA PORTUGAL', 'PORTUGAL - LIGA PORTUGAL 2', 'AZERBAIJAN - PREMIER LEAGUE', 'CROATIA - PRVA NL', 'TURKEY - 1. LIG', 'TURKEY - SUPER LIG', 'GERMANY - BUNDESLIGA', 'WALES - CYMRU PREMIER', 'SPAIN - LALIGA',
                                                  'SPAIN - LALIGA2', 'CYPRUS - FIRST DIVISION', 'MALTA - PREMIER LEAGUE', 'ITALY - SERIE B', "ISRAEL - LIGAT HA'AL", 'GREECE - SUPER LEAGUE', 'ITALY - SERIE A', 'BAHRAIN - PREMIER LEAGUE', 'EGYPT - PREMIER LEAGUE', 'AUSTRALIA - A-LEAGUE', 'INDIA - ISL'])
 
+st.title("Jogos do Dia")
 
-def mapa():
-    ind = {
-        'Indaiatuba': {'lat': -23.09, 'lon': -47.217778},
-        'Manaus': {'lat': -3.1, 'lon': -60.016667},
-    }
+dia = st.date_input(
+    "Data de Análise",
+    date.today())
 
-    df = pd.DataFrame(ind).transpose()
+def load_data_jogos():
+  st.title("Jogos do Dia")
 
-    st.title('Conexão Indaiatuba - Manaus')
+  dia = st.date_input(
+      "Data de Análise",
+      date.today())
+  
+  data_jogos = pd.read_csv("https://github.com/futpythontrader/YouTube/blob/main/Jogos_do_Dia_FlashScore/"+str(dia)+"_Jogos_do_Dia_FlashScore.csv?raw=true")
+    
+  return data_jogos
 
-    st.map(df)
+df_jogos = load_data_jogos()
+
+st.dataframe(df_jogos)
 
 def load_data(league):
   
@@ -60,7 +68,7 @@ st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
 pages = {
-    'Mapa': mapa
+    'jogos do dia': load_data_jogos()
 
 
 }
