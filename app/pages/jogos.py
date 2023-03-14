@@ -37,5 +37,5 @@ df_filtrado = df_jogos.query("@valor_minimo <= FT_Odd_H <= @valor_maximo")
 st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
 st.subheader("Dataframe Filtrado")
-
+st.dataframe(df_filtrado)
 
