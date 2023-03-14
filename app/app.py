@@ -7,7 +7,7 @@ from datetime import date
 
 st.title("Web App fvj Stats")
 
-st.sidebar.subheader("Selecione as colunas")
+
 
 st.sidebar.header("Leagues")
 selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL', 'PARAGUAY - PRIMERA DIVISION', 'COLOMBIA - PRIMERA A', 'VENEZUELA - PRIMERA DIVISION', 'ECUADOR - LIGA PRO', 'IRELAND - PREMIER DIVISION', 'CHILE - PRIMERA DIVISION', 'PERU - LIGA 1', 'URUGUAY - PRIMERA DIVISION', 'JAPAN - J1 LEAGUE', 
@@ -54,7 +54,7 @@ selected_team = st.sidebar.multiselect('Teams', sorted_unique_team, sorted_uniqu
 
 # Filtering data
 df_filtered = df[(df.Home.isin(selected_team))]
-df_filtered = df_filtered[selected_column]
+
 
 st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
