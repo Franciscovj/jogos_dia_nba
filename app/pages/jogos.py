@@ -31,6 +31,7 @@ valor_selecionado = st.slider('Selecione os pontos', valor_minimo, valor_maximo)
 df_filtrado = df_jogos[df_jogos['FT_Odd_H'] == valor_selecionado]
 
 st.subheader("Dataframe: Jogos do Dia")
+st.dataframe(df_jogos)
 st.dataframe(df_filtrado)
 
 
