@@ -4,20 +4,18 @@ import pandas as pd
 import numpy as np
 import datetime
 from datetime import date
-
-page_bg_color = "#f5f5f5"
-page_icon = ":smiley:"
-layout = "wide"
-initial_sidebar_state = "auto"
-
-# Configura o tema do aplicativo
-st.set_page_config(
-    page_title="My Streamlit App",
-    page_icon=page_icon,
-    layout=layout,
-    initial_sidebar_state=initial_sidebar_state,
-    page_bg_color=page_bg_color,
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #F0F0F0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
+
+
 
 st.title("Web App fvj Stats")
 
