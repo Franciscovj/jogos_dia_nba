@@ -23,6 +23,18 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
                                                  'SPAIN - LALIGA2', 'CYPRUS - FIRST DIVISION', 'MALTA - PREMIER LEAGUE', 'ITALY - SERIE B', "ISRAEL - LIGAT HA'AL", 'GREECE - SUPER LEAGUE', 'ITALY - SERIE A', 'BAHRAIN - PREMIER LEAGUE', 'EGYPT - PREMIER LEAGUE', 'AUSTRALIA - A-LEAGUE', 'INDIA - ISL'])
 
 
+def mapa():
+    ind = {
+        'Indaiatuba': {'lat': -23.09, 'lon': -47.217778},
+        'Manaus': {'lat': -3.1, 'lon': -60.016667},
+    }
+
+    df = pd.DataFrame(ind).transpose()
+
+    st.title('Conexão Indaiatuba - Manaus')
+
+    st.map(df)
+
 def load_data(league):
   
   
@@ -56,7 +68,7 @@ st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
 pages = {
-    'ligas': load_data
+    'Mapa': mapa
 
 }
 page = st.sidebar.selectbox('Escolha uma página', pages.keys())
