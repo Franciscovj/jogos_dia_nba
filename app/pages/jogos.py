@@ -21,18 +21,13 @@ def load_data_jogos():
     return data_jogos
 
 df_jogos = load_data_jogos()
-def get_slider_min_max(dataframe):
-    return float(dataframe['FT_Odd_H'].min()), float(dataframe['FT_Odd_H'].max())
+# Define o valor mínimo e máximo iniciais com base na coluna "FT_Odd_H" do DataFrame
+valor_minimo_home = float(df_jogos['FT_Odd_H'].min())
+valor_maximo_home = float(df_jogos['FT_Odd_H'].max())
 
-valor_minimo, valor_maximo = get_slider_min_max(df_jogos)
-
-# Cria um controle de faixa de valores para definir os valores mínimo e máximo
-valor_minimo, valor_maximo = st.range_slider('Selecione um intervalo de valores', 
-                                             min_value=float(df_jogos['FT_Odd_H'].min()), 
-                                             max_value=float(df_jogos['FT_Odd_H'].max()), 
-                                             value=(valor_minimo, valor_maximo),
-                                             step=0.01,
-                                             height=30)
+# Cria controles deslizantes para definir os valores mínimo e máximo
+odd_home_min = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo)
+odd_home_max = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo)
 
 
 
@@ -42,6 +37,5 @@ df_filtrado = df_jogos.query("@valor_minimo <= FT_Odd_H <= @valor_maximo")
 st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
 st.subheader("Dataframe Filtrado")
-st.dataframe(df_filtrado)
 
 
