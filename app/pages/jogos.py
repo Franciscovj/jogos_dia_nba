@@ -19,11 +19,7 @@ def load_data_jogos():
     return data_jogos
 
 df_jogos = load_data_jogos()
-
-st.subheader("Dataframe: Jogos do Dia")
-st.dataframe(df_jogos)
-
-# Define o valor mínimo e máximo do controle deslizante com base na coluna "Pontos_H" do DataFrame
+# Define o valor mínimo e máximo do controle deslizante com base na coluna "FT_Odd_H" do DataFrame
 valor_minimo = df_jogos['FT_Odd_H'].min()
 valor_maximo = df_jogos['FT_Odd_H'].max()
 
@@ -31,4 +27,9 @@ valor_maximo = df_jogos['FT_Odd_H'].max()
 valor_selecionado = st.slider('Selecione os pontos', valor_minimo, valor_maximo)
 
 # Filtra o DataFrame com base no valor selecionado no controle deslizante
-df_jogos = df_jgos[df_jogos['FT_Odd_H'] == valor_selecionado]
+df_filtrado = df_jogos[df_jogos['FT_Odd_H'] == valor_selecionado]
+
+st.subheader("Dataframe: Jogos do Dia")
+st.dataframe(df_filtrado)
+
+
