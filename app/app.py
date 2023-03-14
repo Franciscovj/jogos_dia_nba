@@ -55,5 +55,12 @@ df_filtered = df_filtered[selected_column]
 st.subheader('DataFrame - '+selected_league)
 st.dataframe(df_filtered)
 
+pages = {
+    'ligas': load_data,
 
+}
+page = st.sidebar.selectbox('Escolha uma página', pages.keys())
+
+if page:
+    pages[page]()
 
