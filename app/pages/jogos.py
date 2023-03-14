@@ -20,4 +20,5 @@ def load_data_jogos():
 
 df_jogos = load_data_jogos()
 
+st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
