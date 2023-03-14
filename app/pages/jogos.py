@@ -10,12 +10,11 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     # Define a cor de fundo da página
-    bg_color="#00FF00",
+    page_bg_color="#00FF00",
     # Define a cor da barra lateral
     sidebar_bg_color="#0000FF",
 )
 
-st.title("Minha aplicação personalizada com Streamlit")
 
 st.title("Web App fvj Stats")
 
