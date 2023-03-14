@@ -22,11 +22,7 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
                                                  'NORTHERN IRELAND - NIFL PREMIERSHIP', 'ENGLAND - PREMIER LEAGUE', 'PORTUGAL - LIGA PORTUGAL', 'PORTUGAL - LIGA PORTUGAL 2', 'AZERBAIJAN - PREMIER LEAGUE', 'CROATIA - PRVA NL', 'TURKEY - 1. LIG', 'TURKEY - SUPER LIG', 'GERMANY - BUNDESLIGA', 'WALES - CYMRU PREMIER', 'SPAIN - LALIGA',
                                                  'SPAIN - LALIGA2', 'CYPRUS - FIRST DIVISION', 'MALTA - PREMIER LEAGUE', 'ITALY - SERIE B', "ISRAEL - LIGAT HA'AL", 'GREECE - SUPER LEAGUE', 'ITALY - SERIE A', 'BAHRAIN - PREMIER LEAGUE', 'EGYPT - PREMIER LEAGUE', 'AUSTRALIA - A-LEAGUE', 'INDIA - ISL'])
 
-st.title("Jogos do Dia")
 
-dia = st.date_input(
-    "Data de Análise",
-    date.today())
 
 def load_data_jogos():
   st.title("Jogos do Dia")
