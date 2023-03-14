@@ -9,8 +9,7 @@ st.set_page_config(
     page_icon=":guardsman:",
     layout="wide",
     initial_sidebar_state="expanded",
-    # Define a cor de fundo da página
-    page_bg_color="blue",
+
     # Define a cor da barra lateral
     sidebar_bg_color="blue",
 )
