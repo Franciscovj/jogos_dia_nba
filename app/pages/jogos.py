@@ -30,7 +30,8 @@ valor_maximo = float(df_jogos['FT_Odd_H'].max())
 valor_selecionado = st.slider('Selecione os pontos', valor_minimo, valor_maximo)
 
 # Filtra o DataFrame com base no valor selecionado no controle deslizante
-df_filtrado = df_jogos[df_jogos['FT_Odd_H'] == valor_selecionado]
+df_filtrado = df_jogos.query("FT_Odd_H == @valor_selecionado")
+
 
 st.subheader("Dataframe: Jogos do Dia")
 st.dataframe(df_jogos)
