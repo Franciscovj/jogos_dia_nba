@@ -21,14 +21,11 @@ def load_data_jogos():
     return data_jogos
 
 df_jogos = load_data_jogos()
+def get_slider_min_max(dataframe):
+    return float(dataframe['FT_Odd_H'].min()), float(dataframe['FT_Odd_H'].max())
 
-# Define o valor mínimo e máximo iniciais com base na coluna "FT_Odd_H" do DataFrame
-valor_minimo = float(df_jogos['FT_Odd_H'].min())
-valor_maximo = float(df_jogos['FT_Odd_H'].max())
+valor_minimo, valor_maximo = get_slider_min_max(df_jogos)
 
-# Cria controles deslizantes para definir os valores mínimo e máximo
-#valor_minimo = st.slider('Valor mínimo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_minimo)
-#valor_maximo = st.slider('Valor máximo', float(df_jogos['FT_Odd_H'].min()), float(df_jogos['FT_Odd_H'].max()), value=valor_maximo)
 # Cria um controle de faixa de valores para definir os valores mínimo e máximo
 valor_minimo, valor_maximo = st.range_slider('Selecione um intervalo de valores', 
                                              min_value=float(df_jogos['FT_Odd_H'].min()), 
