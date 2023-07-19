@@ -31,7 +31,7 @@ selected_league = st.sidebar.selectbox('League',['BOLIVIA - DIVISION PROFESIONAL
 def load_data(league):
   
   
-  url = "https://github.com/Franciscovj/jogos_dia_nba/blob/main/dash_23.csv?raw=true"
+  url = "https://github.com/Franciscovj/jogos_dia_nba/blob/main/dados_exportados.xlsx?raw=true"
   data = pd.read_csv(url)
   data = data[data['Liga'] == selected_league]
     
