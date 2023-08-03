@@ -23,7 +23,7 @@ selected_league = st.sidebar.selectbox('League',['ALEMANHA - 2. BUNDESLIGA', 'AL
 def load_data(league):
   
   
-  url = "https://github.com/Franciscovj/jogos_dia_nba/blob/main/dados_exportados.xlsx?raw=true"
+  url = f"https://github.com/Franciscovj/jogos_dia_nba/blob/main/dados_exportados.xlsx?raw=true"
   data = pd.read_excel(url)
   data = data[data['League'] == selected_league]
     
