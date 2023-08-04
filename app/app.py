@@ -12,7 +12,7 @@ st.markdown(
 boas analises!!!!!!!!!!
 '''
     )
-
+                                                                                
 st.sidebar.header("Leagues")
 selected_league = st.sidebar.selectbox('League',['ALEMANHA - 2. BUNDESLIGA', 'ALEMANHA - BUNDESLIGA', 'BRASIL - SÉRIE A', 'BRASIL - SÉRIE B', 'BRASIL - SÉRIE C', 'BÉLGICA - LIGA JUPILER', 'ESPANHA - LALIGA', 'ESPANHA - LALIGA2',
                                                  'FRANÇA - LIGUE 1', 'INGLATERRA - PREMIER LEAGUE', 'ITÁLIA - SERIE A', 'ITÁLIA - SERIE B', 'JAPÃO - LIGA J1', 'MÉXICO - LIGA MX', 'NORUEGA - ELITESERIEN', 'PORTUGAL - LIGA PORTUGAL', 
