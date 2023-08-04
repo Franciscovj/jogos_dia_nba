@@ -36,7 +36,7 @@ def highlight_above_threshold(val, threshold):
     return color
 
 styled_df = df_filtered.style \
-    .applymap(lambda x: highlight_above_threshold(x, 10), subset=['alguma_coluna']) \
+    .applymap(lambda x: highlight_above_threshold(x, 10), subset=['FT_Odd_H']) \
     .set_properties(**{'background-color': 'black', 'color': 'white'}) \
     .applymap(lambda x: 'background-color: lightgrey', subset=pd.IndexSlice[::2, :]) \
     .format({'coluna_numerica': '{:.2f}', 'coluna_monetaria': 'R${:.2f}'})
