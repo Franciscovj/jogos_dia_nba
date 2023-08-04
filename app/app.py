@@ -23,11 +23,12 @@ selected_league = st.sidebar.selectbox('League',['ALEMANHA - 2. BUNDESLIGA', 'AL
 def load_data(league):
   
   #https://github.com/Franciscovj/jogos_dia_nba/blob/main/app/dados_exportados.csv
-  url = f"https://github.com/Franciscovj/jogos_dia_nba/blob/main/app/dados_exportados.csv?raw=true"
-  data = pd.read_csv(url)
-  data = data[data['League'] == selected_league]
+   url = "https://raw.githubusercontent.com/Franciscovj/jogos_dia_nba/f2c3a5bde9becbf90d4ec14709cc3f613aaeeb1d/app/dados_exportados.csv"
+   data = pd.read_csv(url)
+
+   data = data[data['League'] == selected_league]
     
-  return data
+   return data
 
 df = load_data(selected_league)
 
